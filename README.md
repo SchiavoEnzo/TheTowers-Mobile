@@ -20,3 +20,7 @@ Se configurar o mesmo banco do projeto web, as contas e fichas serão compartilh
 Cadastro e login são públicos. As outras rotas exigem `Authorization: Bearer TOKEN`. A sessão expira em 24 horas. POST e PUT recebem o conteúdo de `data`, conforme `examples/agent.json`.
 
 Apenas autenticação e personagens são expostos; as rotas de campanhas, ameaças e homebrew retornam 404. `records` mantém `kind: agents`, `owner` e `data`. Os vínculos de inventário existentes são validados e preservados. Um personagem ainda vinculado a uma campanha no banco compartilhado não pode ser excluído (409); remova o vínculo pelo sistema web primeiro.
+
+## Vercel
+
+Projeto `ttmobile`, API pública em https://ttmobile-three.vercel.app/api, com funções na região São Paulo (`gru1`) e Node.js 24. As variáveis `MONGODB_URI` (secreta) e `MONGODB_DB` são configuradas somente no backend em produção. O projeto `ttmf` publica o frontend web.
